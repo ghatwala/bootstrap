@@ -26,16 +26,16 @@ node_js:
   - "8"
 before_install:
   #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then sudo apt-get update && apt-get install -y libfontconfig ruby ruby-dev libffi6 libffi-dev curl; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then wget https://github.com/ibmsoe/phantomjs/releases/download/2.1.1/phantomjs-2.1.1-linux-ppc64.tar.bz2; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then bunzip2 phantomjs-2.1.1-linux-ppc64.tar.bz2; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then tar -xvf phantomjs-2.1.1-linux-ppc64.tar; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then cp phantomjs-2.1.1-linux-ppc64/bin/phantomjs /usr/bin/phantomjs; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then curl -sSL https://rvm.io/mpapis.asc | gpg --import -; fi 
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then curl -sSL https://get.rvm.io | bash -s -- ; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "rvm install ruby-2.4 && rvm use ruby-2.4.1 "; fi 
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "npm install -g grunt-cli && npm install phantomjs ";fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "npm install phantomjs && npm install ";fi
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "gem install bundle && bundle install "; fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then wget https://github.com/ibmsoe/phantomjs/releases/download/2.1.1/phantomjs-2.1.1-linux-ppc64.tar.bz2; fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then bunzip2 phantomjs-2.1.1-linux-ppc64.tar.bz2; fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then tar -xvf phantomjs-2.1.1-linux-ppc64.tar; fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then cp phantomjs-2.1.1-linux-ppc64/bin/phantomjs /usr/bin/phantomjs; fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then curl -sSL https://rvm.io/mpapis.asc | gpg --import -; fi 
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then curl -sSL https://get.rvm.io | bash -s -- ; fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "rvm install ruby-2.4 && rvm use ruby-2.4.1 "; fi 
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "npm install -g grunt-cli && npm install phantomjs ";fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "npm install phantomjs && npm install ";fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then /bin/bash -l -c "gem install bundle && bundle install "; fi
       
   - if [[ `npm -v` != 5* ]]; then npm install -g npm@5; fi
 install:
