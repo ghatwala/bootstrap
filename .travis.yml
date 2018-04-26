@@ -10,7 +10,13 @@ addons:
     if [ "$TRAVIS_OS_NAME" != "linux-ppc64le" ]; then
     chrome: stable
     fi
-
+  - |  
+    if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then
+    apt:
+      packages:
+      - libfontconfig
+      - ruby     
+    fi
 language: node_js
 
 git:
@@ -19,7 +25,7 @@ node_js:
   - "6"
   - "8"
 before_install:
-  - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then sudo apt-get update && apt-get install -y libfontconfig ruby ruby-dev libffi6 libffi-dev curl; fi
+  #- if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then sudo apt-get update && apt-get install -y libfontconfig ruby ruby-dev libffi6 libffi-dev curl; fi
   - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then wget https://github.com/ibmsoe/phantomjs/releases/download/2.1.1/phantomjs-2.1.1-linux-ppc64.tar.bz2; fi
   - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then bunzip2 phantomjs-2.1.1-linux-ppc64.tar.bz2; fi
   - if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then tar -xvf phantomjs-2.1.1-linux-ppc64.tar; fi
