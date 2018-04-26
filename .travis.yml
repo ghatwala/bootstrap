@@ -10,13 +10,7 @@ addons:
     if [ "$TRAVIS_OS_NAME" != "linux-ppc64le" ]; then
     chrome: stable
     fi
-  - |  
-    if [ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]; then
-    apt:
-      packages:
-      - libfontconfig
-      - ruby     
-    fi
+  
 language: node_js
 
 git:
