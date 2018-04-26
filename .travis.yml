@@ -6,9 +6,13 @@ sudo: false
 #dist: trusty
 
 addons:
-  chrome: stable
+  - |
+    if [ "$TRAVIS_OS_NAME" != "linux-ppc64le" ]; then
+    chrome: stable
+    fi
 
 language: node_js
+
 git:
   depth: 3
 node_js:
